@@ -22,13 +22,13 @@ class FontsViewController: UIViewController{
         self.view.addSubview(infoView!)
     }
     
-    @IBAction func doNotInfo(sender: UIButton) {
-        InformationController.showInformation(TextConstants.fontDoNot, position: .DoNot, informationView: infoView!)
+    @IBAction func doNotInfo(_ sender: UIButton) {
+        InformationController.showInformation(TextConstants.fontDoNot, position: .doNot, informationView: infoView!)
     }
     
     
-    @IBAction func doInfo(sender: UIButton) {
-        InformationController.showInformation(TextConstants.fontDo, position: .Do, informationView: infoView!)
+    @IBAction func doInfo(_ sender: UIButton) {
+        InformationController.showInformation(TextConstants.fontDo, position: .do, informationView: infoView!)
     }
     
 }

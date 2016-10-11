@@ -14,8 +14,8 @@ class InformationView: UIView{
     
     @IBOutlet weak var textLabel: UITextView!
     
-    @IBAction func closePressed(sender: UIButton) {
-        self.hidden = true
+    @IBAction func closePressed(_ sender: UIButton) {
+        self.isHidden = true
     }
 
     

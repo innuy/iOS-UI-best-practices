@@ -10,35 +10,35 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    var sections: [Section] = [Section.Fonts, Section.Layout, Section.General, Section.Feedback]
+    var sections: [Section] = [Section.fonts, Section.layout, Section.general, Section.feedback]
     
-    override func viewWillAppear(animated: Bool) {
-        var _ = NSBundle.mainBundle().loadNibNamed("InformationView",
-                                                      owner: nil, options: nil)[0] as? InformationView
+    override func viewWillAppear(_ animated: Bool) {
+        var _ = Bundle.main.loadNibNamed("InformationView",
+                                                      owner: nil, options: nil)?[0] as? InformationView
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections.count
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        dispatch_async(dispatch_get_main_queue(),{
-            self.performSegueWithIdentifier(self.sections[indexPath.row].destinationSegue, sender: nil)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async(execute: {
+            self.performSegue(withIdentifier: self.sections[(indexPath as NSIndexPath).row].destinationSegue, sender: nil)
         })
        
         
-       tableView.deselectRowAtIndexPath(indexPath, animated: true)
+       tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("MainViewTableCell", forIndexPath: indexPath) as! MainViewTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewTableCell", for: indexPath) as! MainViewTableCell
         
-        cell.titleLabel.text = sections[indexPath.row].labelText
+        cell.titleLabel.text = sections[(indexPath as NSIndexPath).row].labelText
         
         return cell
     }

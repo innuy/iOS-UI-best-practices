@@ -21,16 +21,16 @@ class GeneralDesignController: UIViewController {
         self.view.addSubview(infoView!)
     }
     
-    @IBAction func continueButtonPressed(sender: UIButton) {
-        introView.hidden = true
+    @IBAction func continueButtonPressed(_ sender: UIButton) {
+        introView.isHidden = true
     }
     
-    @IBAction func doNotInfoPressed(sender: UIButton) {
-        InformationController.showInformation(TextConstants.generalDoNot, position: .DoNot, informationView: infoView!)
+    @IBAction func doNotInfoPressed(_ sender: UIButton) {
+        InformationController.showInformation(TextConstants.generalDoNot, position: .doNot, informationView: infoView!)
     }
     
     
-    @IBAction func doInfoPressed(sender: UIButton) {
-        InformationController.showInformation(TextConstants.generalDo, position: .Do, informationView: infoView!)
+    @IBAction func doInfoPressed(_ sender: UIButton) {
+        InformationController.showInformation(TextConstants.generalDo, position: .do, informationView: infoView!)
     }
 }

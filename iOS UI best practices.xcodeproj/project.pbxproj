@@ -143,6 +143,7 @@
 					66F3A1EB1CFCBF850067853C = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = LU7QL7CD53;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -314,6 +315,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Innuy.iOS-UI-best-practices";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -329,6 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Innuy.iOS-UI-best-practices";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

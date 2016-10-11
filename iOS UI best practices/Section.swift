@@ -9,33 +9,33 @@
 import Foundation
 
 enum Section{
-    case Fonts
-    case Layout
-    case General
-    case Feedback
+    case fonts
+    case layout
+    case general
+    case feedback
  
     var destinationSegue: String{
         switch self{
-        case .Fonts:
+        case .fonts:
             return "ToFontsScreen"
-        case .Layout:
+        case .layout:
             return "ToLayoutScreen"
-        case .General:
+        case .general:
             return "ToGeneralDesignScreen"
-        case .Feedback:
+        case .feedback:
             return "ToFeedbackScreen"
         }
     }
     
     var labelText: String{
         switch self{
-        case .Fonts:
+        case .fonts:
             return "Fonts example"
-        case .Layout:
+        case .layout:
             return "Layout example"
-        case .General:
+        case .general:
             return "General design example"
-        case .Feedback:
+        case .feedback:
             return "Feedback example"
         }
     }

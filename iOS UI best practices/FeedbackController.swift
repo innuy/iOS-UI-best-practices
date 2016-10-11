@@ -22,48 +22,48 @@ class FeedbackController: UIViewController {
     }
     
 
-    @IBAction func longActionDoNotPressed(sender: UIButton) {
-        startLongAction(.DoNot)
+    @IBAction func longActionDoNotPressed(_ sender: UIButton) {
+        startLongAction(.doNot)
     }
     
-    @IBAction func doNotInfoPressed(sender: UIButton) {
-        InformationController.showInformation(TextConstants.feedbackDoNot, position: .DoNot, informationView: infoView!)
-    }
-    
-    
-    @IBAction func doInfoPressed(sender: UIButton) {
-        InformationController.showInformation(TextConstants.feedbackDo, position: .Do, informationView: infoView!)
+    @IBAction func doNotInfoPressed(_ sender: UIButton) {
+        InformationController.showInformation(TextConstants.feedbackDoNot, position: .doNot, informationView: infoView!)
     }
     
     
-    @IBAction func longActionDoPressed(sender: UIButton) {
+    @IBAction func doInfoPressed(_ sender: UIButton) {
+        InformationController.showInformation(TextConstants.feedbackDo, position: .do, informationView: infoView!)
+    }
+    
+    
+    @IBAction func longActionDoPressed(_ sender: UIButton) {
         indicator.startAnimating()
-        sender.hidden = true
-        startLongAction(.Do)
+        sender.isHidden = true
+        startLongAction(.do)
     }
     
-    func startLongAction(position: InfoPosition){
-        NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(FeedbackController.finishLongAction(_:)), userInfo: position.rawValue, repeats: false)
+    func startLongAction(_ position: InfoPosition){
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(FeedbackController.finishLongAction(_:)), userInfo: position.rawValue, repeats: false)
     }
     
-    func finishLongAction(timer:NSTimer){
+    func finishLongAction(_ timer:Timer){
         if let posNumber: Int = timer.userInfo as? Int{
             if let position: InfoPosition = InfoPosition(rawValue: posNumber){
                 var message = ""
                 switch position {
-                case .Do:
+                case .do:
                     indicator.stopAnimating()
-                    longActionDoButton.hidden = false
+                    longActionDoButton.isHidden = false
                     message = "Long action finished for DO section."
                     break
-                case .DoNot:
+                case .doNot:
                     message = "Long action finished for DO NOT section."
                     break
                 }
                 
-                let alert = UIAlertController(title: "Action finished", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                let alert = UIAlertController(title: "Action finished", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
