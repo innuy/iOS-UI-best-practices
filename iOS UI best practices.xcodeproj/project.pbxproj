@@ -70,7 +70,6 @@
 			children = (
 				6693B9DA1D1D81220035F129 /* TextConstants.swift */,
 				6693B9E01D21704D0035F129 /* Section.swift */,
-				6693B9D41D1D63A30035F129 /* InformationController.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -97,6 +96,7 @@
 				6693B9E31D2180820035F129 /* Helpers */,
 				6693B9E21D21800A0035F129 /* Views */,
 				66F3A1EF1CFCBF850067853C /* AppDelegate.swift */,
+				6693B9D41D1D63A30035F129 /* InformationController.swift */,
 				66F3A1F11CFCBF850067853C /* MainViewController.swift */,
 				66F3A1F31CFCBF860067853C /* Main.storyboard */,
 				6693B9DE1D1DB99F0035F129 /* FeedbackController.swift */,
